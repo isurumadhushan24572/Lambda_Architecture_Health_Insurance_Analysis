@@ -1,0 +1,67 @@
+[
+  
+  {
+      "relative_url": "/uc?id=1skPqSjUxk5bX_RhZdiurJrLevSZoK43T",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_1.csv"
+    },
+    {
+      "relative_url": "/uc?id=1qmTlwS7_HxSoLJH9xFSpghxAVlsnD3cz",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_2.csv"
+    },
+    {
+      "relative_url": "/uc?id=18JWh9w2RXF4cIVYeZHqEG7NXE7Q9hZLc",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_3.csv"
+    },
+    {
+      "relative_url": "/uc?id=1NbMKCxPqpg2Z3xccPi746YTe9PL0CdIB",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_4.csv"
+    },
+    {
+      "relative_url": "/uc?id=1YZFc_uuPOxC8ms7TBuJJ845r2AyBDYKs",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_5.csv"
+    },
+    {
+      "relative_url": "/uc?id=1XxgN1eC5MS0a01wMK_TRr7yYul3D_S9t",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_6.csv"
+    },
+    {
+      "relative_url": "/uc?id=1rzI5tIfUkrLaGxwTWN8UlME9deem1tpc",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_7.csv"
+    },
+    {
+      "relative_url": "/uc?id=1t2Tg_U4q8cpYj4FdiVecbryyjL4y2aqd",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_8.csv"
+    },
+    {
+      "relative_url": "/uc?id=1BP2YwTUtO_9k_jz9C9kK3dSTpPTUO8Rt",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_9.csv"
+    },
+    {
+      "relative_url": "/uc?id=16zx0HOEGcGmo6xIXGApMR717Yv_BGS4z",
+      "Folder_Name": "Medicare_DME_Devices_Supplies",
+      "File_Name": "Medicare_DME_Devices_Supplies_2021_10.csv"
+    },
+    {
+        "relative_url": "/uc?id=10CcDTSK1wvS_4-NGq2ukSZE_wkPBQIn2",
+        "Folder_Name": "Claims",
+        "File_Name": "Medicare_Hospital_Spending_by_Claim.csv"
+    },
+    {
+        "relative_url": "/uc?id=1lozny_mg601Ic8nIz156HbK0cQ1PnCaz",
+        "Folder_Name": "Drugs",
+        "File_Name": "Medicaid_Spending_by_Drug_Data.csv"
+    }
+
+  ]
+
+
+  
