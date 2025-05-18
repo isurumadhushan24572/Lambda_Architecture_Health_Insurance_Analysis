@@ -8,7 +8,6 @@ This project focuses on building a **Health Insurance Analytics System** using *
 
 - Design and implement a scalable data analytics system using Azure.
 - Process over 1 million historical records and real-time data streams.
-- Enable real-time fraud detection and pricing optimization.
 - Deliver insights into spending patterns across Medicare and Medicaid services.
 
 ---
