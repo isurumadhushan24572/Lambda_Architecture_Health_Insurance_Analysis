@@ -1,104 +1,93 @@
-# Health Insurance Analysis Using Lambda Architecture on Azure
+# Health Insurance Analytics System Using Lambda Architecture on Microsoft Azure
 
-This project focuses on building a **Health Insurance Analytics System** using **Lambda Architecture** on Microsoft Azure. The system is designed to process both **historical** and **real-time** health insurance data to provide actionable insights for insurance companies, healthcare providers, and government agencies.
-
----
-
-## 📌 Objectives
-
-- Design and implement a scalable data analytics system using Azure.
-- Process over 1 million historical records and real-time data streams.
-- Deliver insights into spending patterns across Medicare and Medicaid services.
+This project presents a **Health Insurance Analytics System** built using **Lambda Architecture** on **Microsoft Azure**, designed to process and analyze both historical and real-time healthcare claims data from Medicare and Medicaid sources. The system leverages Azure services to build a scalable, low-latency analytics pipeline and visualizes insights using Power BI.
 
 ---
 
-## 📊 Dashboards (Power BI)
+## 📌 Project Objectives
 
-We developed three main dashboards connected via **Azure Synapse Analytics**:
-
-1. **Insurance Claims Dashboard**
-2. **Drug Claims Dashboard**
-3. **Medicare Claims Dashboard**
-
-Each dashboard provides rich visual insights with filters and drill-down capabilities.
+- Build a scalable Lambda Architecture pipeline on Azure for healthcare data analytics.
+- Integrate batch and real-time data from CMS datasets (Medicare & Medicaid).
+- Enable real-time and historical insights on drug spending, equipment usage, and hospital claims.
+- Visualize insights using interactive Power BI dashboards.
+- Compare Spark vs. MapReduce performance using Databricks.
 
 ---
 
-## 📂 Data Sources
-
-Data is sourced from the **Centers for Medicare & Medicaid Services (CMS)**:
-
+## 📊 Data Sources
+ - [Dataset Link](https://data.cms.gov/)
+   
 1. **Medicaid Spending by Drug (2018–2022)**  
-   - Outpatient drug costs, trends, manufacturers, and dosage pricing.  
-   - [Link](https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/medicaid-spending-by-drug)
-
-2. **Medicare Durable Medical Equipment by Referring Provider (2018–2022)**  
-   - Spending on medical devices by healthcare providers.  
-   - [Link](https://data.cms.gov/resources/medicare-durable-medical-equipment-devices-supplies-by-referring-provider-data-dictionary)
-
-3. **Medicare Hospital Spending by Claim (2018–2022)**  
-   - Hospital services, payments, and claim-level spending data.  
-   - [Link](https://data.cms.gov/provider-data/dataset/nrth-mfg3)
+2. **Medicare Durable Medical Equipment by Referring Provider (2018–2022)**
+3. **Medicare Hospital Spending by Claim (2018–2022)**
 
 ---
 
-## ⚙️ Architecture Overview
+## 🏗️ Architecture
 
-We implemented **Lambda Architecture** with the following layers:
+### Lambda Architecture Components:
 
-### 🔁 Batch Layer
-- Tools: Azure Data Factory, Data Lake, Databricks, Synapse
-- Process: Ingest → Transform → Store in Silver Layer → Create Views & External Tables
-
-### ⚡ Speed Layer
-- Tools: Azure Event Hub, Stream Analytics
-- Real-time streaming of new insurance claims data
-
-### 🗂️ Serving Layer
-- Unified batch + real-time views using `OPENROWSET()` in Synapse
-- External tables created using views for Power BI access
-
-### 📈 Presentation Layer
-- Power BI dashboards visualizing insurance trends and costs
+- **Batch Layer:** Azure Data Factory, Azure Data Lake, Azure Databricks, Azure Synapse Analytics
+- **Speed Layer:** Azure Event Hub, Azure Stream Analytics, Python Notebooks (Synthetic Data), Azure Data Lake
+- **Serving Layer:** Views + External Tables in Synapse Analytics
+- **Presentation Layer:** Power BI Dashboards
 
 ---
 
-## 🔬 Performance Comparison
+## ⚙️ Technologies Used
 
-Compared **MapReduce (via RDD)** and **Apache Spark** performance on a record count task:
-- Dataset: `Medicare_DME_DS`
-- Condition: `Average_Supplier_Medicare_Payment_Amount > 100`
-- Result: Spark significantly outperforms MapReduce in both speed and efficiency.
+| Layer              | Services/Technologies                              |
+|-------------------|----------------------------------------------------|
+| Batch Layer        | ADF, ADLS, Azure Databricks, Synapse Analytics    |
+| Speed Layer        | Azure Event Hub, ASA, Python, ADLS                |
+| Serving Layer      | Synapse SQL Views, External Tables                |
+| Presentation Layer | Power BI, Azure Synapse Connectivity              |
 
 ---
 
-## 🧩 Challenges & Solutions
+## 🧪 Performance Comparison: Spark vs MapReduce
+
+A performance test was conducted on the `Medicare_DME_DS` dataset to compare:
+- Spark with native APIs (in-memory)
+- Spark RDDs simulating MapReduce
+
+**Observation:** Spark outperformed MapReduce due to optimized DAG and in-memory execution.
+
+---
+
+## 📈 Power BI Dashboards
+
+Interactive dashboards are built to show:
+- **Insurance Claims Analysis**
+- **Drug Claims Analysis**
+- **Medicare Claims Analysis**
+
+---
+
+## 🛠️ Challenges & Solutions
 
 | Challenge | Solution |
 |----------|----------|
-| File corruption in Google Drive (>100MB) | Split files into sub-100MB chunks |
-| Databricks cost | Single-node cluster + Auto-termination |
-| Dynamic pipelines | Used parameterized JSON + Lookup Activities |
+| Google Drive file corruption (>100MB) | Split files into chunks smaller than 100MB |
+| High Databricks cost | Auto-termination + single-node cluster |
+| Dynamic pipeline setup | Used parameterized JSON + Lookup Activity |
+| No real-time data | Generated synthetic Medicare claims via Python |
+| Spark vs. MapReduce testing | Implemented both using Databricks Notebooks |
 
 ---
 
-## 📁 Repository Structure
+## 👨‍💻 Team Contribution
 
-```bash
-.
-├── data/
-│   ├── raw/         # Raw CSVs (2018–2022)
-│   └── processed/   # Transformed parquet files
-├── notebooks/
-│   ├── batch_processing.ipynb
-│   ├── speed_layer_simulation.ipynb
-│   └── performance_comparison.ipynb
-├── pipelines/
-│   └── adf_dynamic_pipeline.json
-├── synapse/
-│   ├── create_views.sql
-│   └── external_tables.sql
-├── dashboards/
-│   └── powerbi_dashboards.pbix
-├── README.md
-└── LICENSE
+| Student ID | Name                  | Contribution                             |
+|------------|-----------------------|------------------------------------------|
+| 24490      | M.R.K. Karunathilaka  | Data Source & Power BI Presentation Layer|
+| 24572      | M.K.I.M. Rohana       | Batch Layer & Serving Layer              |
+| 24614      | G.A.A.S. Ganegoda     | Speed Layer                              |
+
+---
+
+## 📜 License
+
+This project is for academic and research purposes. All datasets are publicly available through CMS.gov. Reuse is allowed under proper citation.
+
+
